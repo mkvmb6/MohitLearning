@@ -15,7 +15,8 @@ namespace FirstLearning
 
 
             //Instantiation of delegate
-            var delObj = new MyDelegate(MyClass.MyMethod);
+            //var delObj = new MyDelegate(MyClass.MyMethod);
+            MyDelegate delObj = MyClass.MyMethod;//another way of instantiating.
 
             //Adding methods into it.
             delObj += myClass.MyNotSoStaticMethod;
