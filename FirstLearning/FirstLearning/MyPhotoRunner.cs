@@ -7,7 +7,25 @@ namespace FirstLearning
         static void Main(string[] args)
         {
             var photo = Photo.LoadPhoto("C:\\photos\\Mypic.jpg");
-            PhotoProcessor.ProcessPhoto(photo);
+            PhotoProcessor.PhotoHandler photoHandler = PhotoFilters.ApplyBrightness;
+
+            photoHandler += PhotoFilters.ApplyContrast;
+
+            PhotoProcessor.ProcessPhoto(photo, photoHandler);
+
+
+            var photo2 = Photo.LoadPhoto("MyPic");
+
+            photoHandler -= PhotoFilters.ApplyContrast;
+            photoHandler += MyOwnFilters.MakeBlackAndWhite;
+
+            PhotoProcessor.ProcessPhoto(photo2, photoHandler);
+
+
+
+
+
+
         }
     }
 }
