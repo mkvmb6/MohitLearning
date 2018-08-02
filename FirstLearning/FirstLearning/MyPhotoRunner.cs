@@ -1,4 +1,5 @@
-﻿using PhotoLibrary;
+﻿using System;
+using PhotoLibrary;
 
 namespace FirstLearning
 {
@@ -7,8 +8,11 @@ namespace FirstLearning
         static void Main(string[] args)
         {
             var photo = Photo.LoadPhoto("C:\\photos\\Mypic.jpg");
-            PhotoProcessor.PhotoHandler photoHandler = PhotoFilters.ApplyBrightness;
+            //PhotoProcessor.PhotoHandler photoHandler = PhotoFilters.ApplyBrightness;
 
+           // photoHandler += PhotoFilters.ApplyContrast;
+
+            Action<Photo> photoHandler = PhotoFilters.ApplyBrightness;
             photoHandler += PhotoFilters.ApplyContrast;
 
             PhotoProcessor.ProcessPhoto(photo, photoHandler);
