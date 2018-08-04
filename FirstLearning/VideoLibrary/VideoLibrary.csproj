@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AD37DBDA-B611-4DBB-A083-B27BCE473214}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{92E588D6-8B59-4075-8454-4167DA06A790}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FirstLearning</RootNamespace>
-    <AssemblyName>FirstLearning</AssemblyName>
+    <RootNamespace>VideoLibrary</RootNamespace>
+    <AssemblyName>VideoLibrary</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,16 +22,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject>FirstLearning.MyVideoRunner</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -45,27 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MyOwnFilters.cs" />
-    <Compile Include="MyPhotoRunner.cs" />
-    <Compile Include="MyVideoRunner.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Video.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
+    <Compile Include="VideoCompressor.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MailService\MailService.csproj">
       <Project>{DC020D01-E567-4664-B822-0A8C67871642}</Project>
       <Name>MailService</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PhotoLibrary\PhotoLibrary.csproj">
-      <Project>{DD59EA32-680A-4190-A3D7-9DF9F956F254}</Project>
-      <Name>PhotoLibrary</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\VideoLibrary\VideoLibrary.csproj">
-      <Project>{92E588D6-8B59-4075-8454-4167DA06A790}</Project>
-      <Name>VideoLibrary</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
