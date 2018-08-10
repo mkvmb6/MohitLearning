@@ -8,9 +8,9 @@ namespace VideoLibrary
         //1. Define a delegate.
         //2. Define an event based on the delegate.
         //3. Raise the event (Shout).
-        public delegate void VideoCompressedEventHandler(object source, EventArgs e);
+       // public delegate void VideoCompressedEventHandler(object source, VideoEventArgs e);        
 
-        public event VideoCompressedEventHandler VideoCompressed;
+        public event EventHandler<VideoEventArgs> VideoCompressed;
 
         public void CompressVideo(Video video)
         {
@@ -18,10 +18,10 @@ namespace VideoLibrary
             Thread.Sleep(5000);
             Console.WriteLine("Compression complete.");
 
-            OnVideoCompressed();
+            OnVideoCompressed(video);
         }
 
-        private void OnVideoCompressed()
+        private void OnVideoCompressed(Video video )
         {
             //I will just shout.
             //Tell the world, that I'm done. Do your work.
@@ -30,7 +30,15 @@ namespace VideoLibrary
             //    VideoCompressed(this, EventArgs.Empty);
             //}
 
-            VideoCompressed?.Invoke(this, EventArgs.Empty);
+            VideoEventArgs  e = new VideoEventArgs ();
+            e.Video = video;
+            
+            VideoCompressed?.Invoke(this,e);
         }
+    }
+
+   public  class VideoEventArgs:EventArgs
+    {
+        public Video Video { get; set; }
     }
 }
