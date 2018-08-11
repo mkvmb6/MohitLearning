@@ -26,7 +26,6 @@ namespace BookLibrary
             Console.WriteLine(3.MiliSeconds());
 
             var numList = new List<int>() {2,4,5,7,3};
-            var var = numList.First();
 
             var myfirst = numList.MyFirst();
             Console.WriteLine(myfirst);
