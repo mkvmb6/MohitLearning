@@ -16,6 +16,8 @@ namespace FirstLearning
             photoHandler += PhotoFilters.ApplyContrast;
 
             PhotoProcessor.ProcessPhoto(photo, photoHandler);
+            //declare, use , instantiate, call the holding method
+        
 
 
             var photo2 = Photo.LoadPhoto("MyPic");
