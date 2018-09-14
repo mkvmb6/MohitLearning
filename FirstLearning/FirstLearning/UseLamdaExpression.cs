@@ -26,7 +26,8 @@ namespace FirstLearning
             var useLambda = new UseLamdaExpression();
             const int num = 5;
             //Console.WriteLine(new Func<int, int>(useLambda.GetSquare));
-            Console.WriteLine(new Func<int>(() => num * num));
+            var func = new Func<int, int>((arg) => arg * arg);
+            Console.WriteLine(func(num));
         }
     }
 }
