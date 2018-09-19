@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 namespace DataStructures
 {
    public class MyLinkedList
-    {
+   {
+       private Node start;
         private class Node
         {
             public int data;
@@ -17,7 +18,8 @@ namespace DataStructures
 
         private void Add()
         {
-           
+           Node obj = new Node();
+
         }
        
     }
