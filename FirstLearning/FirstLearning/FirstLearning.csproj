@@ -32,7 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>FirstLearning.LambdaExpressionRunner</StartupObject>
+    <StartupObject>FirstLearning.MyBookRunner</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -45,9 +45,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MyBookRunner.cs" />
     <Compile Include="MyOwnFilters.cs" />
     <Compile Include="MyPhotoRunner.cs" />
     <Compile Include="MyVideoRunner.cs" />
+    <Compile Include="Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UseLamdaExpression.cs" />
@@ -56,6 +58,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BookLibrary\BookLibrary.csproj">
+      <Project>{7F8E4C19-2D2E-48F0-BCC9-D2C487C93E17}</Project>
+      <Name>BookLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MailService\MailService.csproj">
       <Project>{DC020D01-E567-4664-B822-0A8C67871642}</Project>
       <Name>MailService</Name>
