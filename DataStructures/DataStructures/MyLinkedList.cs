@@ -1,4 +1,6 @@
-﻿namespace DataStructures
+﻿using System;
+
+namespace DataStructures
 {
     public class MyLinkedList
     {
@@ -34,6 +36,20 @@
         {
             //Make sure don't modify where the start is pointing.
             //Print the whole list using Console.WriteLine();
+            if (start == null)
+            {
+                Console.WriteLine("List is empty");
+            }
+            else
+            {
+                var tempNode = start;
+                while (tempNode!=null)
+                {
+                    Console.Write(tempNode.data+" -> ");
+                    tempNode = tempNode.next;
+                }
+            }
+
         }
 
     }
@@ -48,6 +64,7 @@
             linkedList.Add(7);
             linkedList.Add(8);
             linkedList.Add(7);
+            linkedList.printList();
         }
     }
 }
