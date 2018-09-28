@@ -87,6 +87,29 @@ namespace DataStructures
             
         }
 
+        public void Reverse()
+        {
+            if (start?.next == null)
+            {
+                return;
+            }
+
+            var previousNode=start;
+            var currentNode = start.next;
+            var nextNode = currentNode.next;
+
+            previousNode.next = null;
+
+            while (nextNode!=null)
+            {
+                currentNode.next = previousNode;
+                previousNode = currentNode;
+                currentNode = nextNode;
+                nextNode = nextNode.next;
+            }
+            currentNode.next = previousNode;
+            start = currentNode;
+        }
     }
 
     class MyLinkedListRunner
@@ -94,14 +117,15 @@ namespace DataStructures
         static void Main(string[] args)
         {
             var linkedList = new MyLinkedList<int>();
-            
+
             linkedList.Add(5);
             linkedList.Add(7);
             linkedList.Add(8);
             linkedList.Add(7);
             linkedList.Print();
-            linkedList.Delete(10);
-            linkedList.Delete(8);
+            //linkedList.Delete(10);
+           // linkedList.Delete(8);
+           linkedList.Reverse();
             linkedList.Print();
             Console.ReadLine();
         }
