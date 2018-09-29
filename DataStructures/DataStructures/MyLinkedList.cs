@@ -82,10 +82,7 @@ namespace DataStructures
 
         }
 
-        public void Insert(T insertData, int position)
-        {
-            
-        }
+      
 
         public void Reverse()
         {
@@ -110,7 +107,57 @@ namespace DataStructures
             currentNode.next = previousNode;
             start = currentNode;
         }
+
+
+
+        public void Insert(T data, int position)
+        {
+            int count = 1;
+            var tempNode = start;
+            Node prevNode;
+            if (position == 1)
+            {
+                var newNode = new Node {data = data};
+                newNode.next = tempNode;
+                start = newNode;
+                // tempNode = tempNode.next;
+                //prevNode = tempNode;
+                //tempNode = tempNode.next;
+                //var newNode = new Node {data = data};
+                //prevNode.next = newNode;
+                //newNode.next = tempNode;
+                return;
+
+            }
+            while (count != position - 1 && tempNode != null)
+            {
+                tempNode = tempNode.next;
+                count++;
+            }
+            if (count == position - 1 && tempNode != null)
+            {
+                var newNode = new Node {data = data};
+                if (tempNode.next != null)
+                {
+                    prevNode = tempNode;
+                    tempNode = tempNode.next;
+                    prevNode.next = newNode;
+                    newNode.next = tempNode;
+                }
+                else
+                {
+                tempNode.next = newNode;
+
+                }
+                return;
+            }
+            Console.WriteLine("mentioned position not present");  
+        }
     }
+
+
+
+
 
     class MyLinkedListRunner
     {
@@ -125,7 +172,8 @@ namespace DataStructures
             linkedList.Print();
             //linkedList.Delete(10);
            // linkedList.Delete(8);
-           linkedList.Reverse();
+           linkedList.Insert(6,11);
+         //  linkedList.Reverse();
             linkedList.Print();
             Console.ReadLine();
         }
