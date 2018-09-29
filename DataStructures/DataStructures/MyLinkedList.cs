@@ -59,7 +59,7 @@ namespace DataStructures
                 Console.WriteLine("Node is not present in the list.");
                 return;
             }
-            if (start.data .Equals( deleteData))
+            if (start.data.Equals(deleteData))
             {
                 start = start.next;
                 return;
@@ -68,7 +68,7 @@ namespace DataStructures
             var prevNode = start;
             while (tempNode != null)
             {
-                if (tempNode.data.Equals( deleteData))
+                if (tempNode.data.Equals(deleteData))
                 {
                     prevNode.next = tempNode.next;
                     tempNode.next = null;
@@ -82,7 +82,7 @@ namespace DataStructures
 
         }
 
-      
+
 
         public void Reverse()
         {
@@ -91,13 +91,13 @@ namespace DataStructures
                 return;
             }
 
-            var previousNode=start;
+            var previousNode = start;
             var currentNode = start.next;
             var nextNode = currentNode.next;
 
             previousNode.next = null;
 
-            while (nextNode!=null)
+            while (nextNode != null)
             {
                 currentNode.next = previousNode;
                 previousNode = currentNode;
@@ -112,46 +112,57 @@ namespace DataStructures
 
         public void Insert(T data, int position)
         {
-            int count = 1;
+            var count = 1;
+            var newNode = new Node {data = data};
             var tempNode = start;
-            Node prevNode;
             if (position == 1)
             {
-                var newNode = new Node {data = data};
                 newNode.next = tempNode;
                 start = newNode;
-                // tempNode = tempNode.next;
-                //prevNode = tempNode;
-                //tempNode = tempNode.next;
-                //var newNode = new Node {data = data};
-                //prevNode.next = newNode;
-                //newNode.next = tempNode;
                 return;
-
             }
-            while (count != position - 1 && tempNode != null)
+
+            while (count != position - 1 && tempNode!=null)
             {
                 tempNode = tempNode.next;
                 count++;
             }
-            if (count == position - 1 && tempNode != null)
+            if (tempNode == null)
             {
-                var newNode = new Node {data = data};
-                if (tempNode.next != null)
-                {
-                    prevNode = tempNode;
-                    tempNode = tempNode.next;
-                    prevNode.next = newNode;
-                    newNode.next = tempNode;
-                }
-                else
-                {
-                tempNode.next = newNode;
-
-                }
+                Console.WriteLine("Node can't be inserted at given position.");
                 return;
             }
-            Console.WriteLine("mentioned position not present");  
+            newNode.next = tempNode.next;
+            tempNode.next = newNode;
+
+
+            #region Naina'sCode
+
+            /*
+                        while (count != position - 1 && tempNode != null)
+                        {
+                            tempNode = tempNode.next;
+                            count++;
+                        }
+                        if (count == position - 1 && tempNode != null)
+                        {
+                            if (tempNode.next != null)
+                            {
+                                prevNode = tempNode;
+                                tempNode = tempNode.next;
+                                prevNode.next = newNode;
+                                newNode.next = tempNode;
+                            }
+                            else
+                            {
+                            tempNode.next = newNode;
+
+                            }
+                            return;
+                        }
+                        Console.WriteLine("mentioned position not present");  */
+
+            #endregion
         }
     }
 
@@ -172,7 +183,7 @@ namespace DataStructures
             linkedList.Print();
             //linkedList.Delete(10);
            // linkedList.Delete(8);
-           linkedList.Insert(6,11);
+           linkedList.Insert(6,3);
          //  linkedList.Reverse();
             linkedList.Print();
             Console.ReadLine();
