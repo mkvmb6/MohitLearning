@@ -173,12 +173,13 @@ namespace DataStructures
             while (nextNode != null)
             {
                 currentNode.next = currentNode.previous;
-                currentNode.previous=currentNode.next;
+                currentNode.previous = nextNode;//currentNode.next;
                 currentNode = nextNode;
                 nextNode = nextNode.next;
             }
             currentNode.next = currentNode.previous;
             start = currentNode;
+            start.previous = null;
         }
 
     }
@@ -191,14 +192,15 @@ class MyDoublyLinkedListRunner
         var doublyLinkedList = new MyDoublyLinkedList<int>();
 
         doublyLinkedList.Add(5);
-        //doublyLinkedList.Add(7);
-        //doublyLinkedList.Add(8);
-        //doublyLinkedList.Add(7);
-        //doublyLinkedList.Add(3);
+        doublyLinkedList.Add(7);
+        doublyLinkedList.Add(8);
+        doublyLinkedList.Add(7);
+        doublyLinkedList.Add(3);
+        doublyLinkedList.Add(13);
         doublyLinkedList.Print();
         //doublyLinkedList.Delete(10);
         //doublyLinkedList.Delete(7);
-    //   doublyLinkedList.Access(5);
+        //   doublyLinkedList.Access(5);
         doublyLinkedList.Reverse();
         doublyLinkedList.Print();
         Console.ReadLine();
