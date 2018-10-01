@@ -82,6 +82,61 @@ namespace DataStructures
 
         }
 
+        public void Update(T data, int position)
+        {
+            if (start == null)
+            {
+                Console.WriteLine("The list is empty. Cant update anything");
+                return;
+            }
+            var tempNode = start;
+            var count = 1;
+            while (count != position)
+            {
+                if (tempNode == null)
+                {
+                    Console.WriteLine("There is no data in the mentioned postion.cant update");
+                    return;
+                }
+                tempNode = tempNode.next;
+                count++;
+            }
+            if (tempNode != null)
+            {
+                tempNode.data = data;
+                Console.WriteLine("the data {0} is updated in the given position {1}", data, position);
+                return;
+            }
+            Console.WriteLine("there is no data in the given positon, its null");
+        }
+
+        public void Access( int position)
+        {
+            if (start == null)
+            {
+                Console.WriteLine("The list is empty. Nothing To access");
+                return;
+            }
+            var tempNode = start;
+            var count = 1;
+            while (count != position)
+            {
+                if (tempNode == null)
+                {
+                    Console.WriteLine("There is no data in the mentioned postion.cant Access");
+                    return;
+                }
+                tempNode = tempNode.next;
+                count++;
+            }
+            if (tempNode != null)
+            {
+                
+                Console.WriteLine("the data is : {0} ,  the given position is  {1}", tempNode.data, position);
+                return;
+            }
+            Console.WriteLine("there is no data in the given positon {0}. Nothing to access", position);
+        }
 
 
         public void Reverse()
@@ -183,8 +238,10 @@ namespace DataStructures
             linkedList.Print();
             //linkedList.Delete(10);
            // linkedList.Delete(8);
-           linkedList.Insert(6,3);
+           //linkedList.Insert(6,3);
          //  linkedList.Reverse();
+       //  linkedList.Update(3,1);
+       linkedList.Access(1);
             linkedList.Print();
             Console.ReadLine();
         }
