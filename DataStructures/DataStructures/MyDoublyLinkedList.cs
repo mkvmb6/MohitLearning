@@ -163,17 +163,14 @@ namespace DataStructures
                 return;
             }
 
-          //  var previousNode = start;
             var currentNode = start;
             var nextNode = currentNode.next;
             currentNode.next = null;
 
-           // previousNode.next = null;
-
             while (nextNode != null)
             {
                 currentNode.next = currentNode.previous;
-                currentNode.previous = nextNode;//currentNode.next;
+                currentNode.previous = nextNode;
                 currentNode = nextNode;
                 nextNode = nextNode.next;
             }
