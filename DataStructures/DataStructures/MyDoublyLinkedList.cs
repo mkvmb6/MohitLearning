@@ -100,6 +100,87 @@ namespace DataStructures
 
             Console.WriteLine($"{deleteData} node is not present in the list.");
         }
+
+        public void Access(int position)
+        {
+            if (start == null)
+            {
+                Console.WriteLine("The list is empty. Nothing To access");
+                return;
+            }
+            var tempNode = start;
+            var count = 1;
+            while (count != position)
+            {
+                if (tempNode == null)
+                {
+                    Console.WriteLine("There is no data in the mentioned postion.cant Access");
+                    return;
+                }
+                tempNode = tempNode.next;
+                count++;
+            }
+            if (tempNode != null)
+            {
+
+                Console.WriteLine("the data is : {0} ,  the given position is  {1}", tempNode.data, position);
+                return;
+            }
+            Console.WriteLine("there is no data in the given positon {0}. Nothing to access", position);
+        }
+        public void Update(T data, int position)
+        {
+            if (start == null)
+            {
+                Console.WriteLine("The list is empty. Cant update anything");
+                return;
+            }
+            var tempNode = start;
+            var count = 1;
+            while (count != position)
+            {
+                if (tempNode == null)
+                {
+                    Console.WriteLine("There is no data in the mentioned postion.cant update");
+                    return;
+                }
+                tempNode = tempNode.next;
+                count++;
+            }
+            if (tempNode != null)
+            {
+                tempNode.data = data;
+                Console.WriteLine("the data {0} is updated in the given position {1}", data, position);
+                return;
+            }
+            Console.WriteLine("there is no data in the given positon, its null");
+        }
+
+        public void Reverse()
+        {
+            if (start?.next == null)
+            {
+                return;
+            }
+
+          //  var previousNode = start;
+            var currentNode = start;
+            var nextNode = currentNode.next;
+            currentNode.next = null;
+
+           // previousNode.next = null;
+
+            while (nextNode != null)
+            {
+                currentNode.next = currentNode.previous;
+                currentNode.previous=currentNode.next;
+                currentNode = nextNode;
+                nextNode = nextNode.next;
+            }
+            currentNode.next = currentNode.previous;
+            start = currentNode;
+        }
+
     }
 }
 
@@ -110,13 +191,15 @@ class MyDoublyLinkedListRunner
         var doublyLinkedList = new MyDoublyLinkedList<int>();
 
         doublyLinkedList.Add(5);
-        doublyLinkedList.Add(7);
-        doublyLinkedList.Add(8);
-        doublyLinkedList.Add(7);
-        doublyLinkedList.Add(3);
+        //doublyLinkedList.Add(7);
+        //doublyLinkedList.Add(8);
+        //doublyLinkedList.Add(7);
+        //doublyLinkedList.Add(3);
         doublyLinkedList.Print();
-        doublyLinkedList.Delete(10);
-        doublyLinkedList.Delete(7);
+        //doublyLinkedList.Delete(10);
+        //doublyLinkedList.Delete(7);
+    //   doublyLinkedList.Access(5);
+        doublyLinkedList.Reverse();
         doublyLinkedList.Print();
         Console.ReadLine();
     }
