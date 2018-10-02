@@ -110,7 +110,7 @@ namespace DataStructures
             Console.WriteLine("there is no data in the given positon, its null");
         }
 
-        public void Access( int position)
+        public void Access(int position)
         {
             if (start == null)
             {
@@ -131,7 +131,7 @@ namespace DataStructures
             }
             if (tempNode != null)
             {
-                
+
                 Console.WriteLine("the data is : {0} ,  the given position is  {1}", tempNode.data, position);
                 return;
             }
@@ -177,7 +177,7 @@ namespace DataStructures
                 return;
             }
 
-            while (count != position - 1 && tempNode!=null)
+            while (count != position - 1 && tempNode != null)
             {
                 tempNode = tempNode.next;
                 count++;
@@ -237,14 +237,14 @@ namespace DataStructures
             linkedList.Add(7);
             linkedList.Print();
             //linkedList.Delete(10);
-           // linkedList.Delete(8);
-           //linkedList.Insert(6,3);
-         //  linkedList.Reverse();
-       //  linkedList.Update(3,1);
-       linkedList.Access(1);
+            // linkedList.Delete(8);
+            //linkedList.Insert(6,3);
+            //  linkedList.Reverse();
+            //  linkedList.Update(3,1);
+            linkedList.Access(1);
             linkedList.Print();
             Console.ReadLine();
         }
     }
-    
+
 }
