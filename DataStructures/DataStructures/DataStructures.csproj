@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MyBubbleSort.cs" />
     <Compile Include="MyDoublyLinkedList.cs" />
     <Compile Include="MyLinkedList.cs" />
     <Compile Include="MySearching.cs" />
