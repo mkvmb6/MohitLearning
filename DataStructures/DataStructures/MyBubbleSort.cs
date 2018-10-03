@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataStructures
 {
@@ -10,30 +6,26 @@ namespace DataStructures
     {
         public static void Main()
         {
-            var numList = new int[] {4, 7, 1, 9, 4};
-            Do_BubbleSort(numList);
+            var numList = new int[] {4, 7, 1,-1, 12, 9, 4};
+            numList.Print();
+            DoBubbleSort(numList);
+            numList.Print();
 
         }
 
-        private static void Do_BubbleSort(int[] numList)
+        private static void DoBubbleSort(int[] numList)
         {
-            int n = numList.Length;
-
-            int temp=numList[0];
-
-            int max = numList[0];
-            for (int i = 0; i <=n-1; i++)
+            int length = numList.Length;
+            for (int i = 0; i < length; i++)
             {
-
-                for (int j = 0; j <=n-i-1; j++)
+                for (int j = 0; j < length - i - 1; j++)
                 {
-                    if ()
+                    if (numList[j] > numList[j + 1])
                     {
-                    
+                        numList.Swap(j, j + 1);
                     }
                 }
-                
-                
+
             }
         }
     }
