@@ -20,11 +20,11 @@ namespace DataStructures
         {
             int length = numList.Length;
             int j,temp;
-            for (int i = 0; i < length; i++)
+            for (int i = 0; i < length-1; i++)
             {
                 j = i + 1;
                 temp = numList[j];
-                while (j!=-1 && numList[j] < numList[j - 1])
+                while (j!=0 && temp < numList[j - 1])
                 {
                     numList[j] = numList[j-1];
                     j--;
