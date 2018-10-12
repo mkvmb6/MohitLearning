@@ -52,6 +52,7 @@
     <Compile Include="MyDoublyLinkedList.cs" />
     <Compile Include="MyInsertionSort.cs" />
     <Compile Include="MyLinkedList.cs" />
+    <Compile Include="MyMergeSort.cs" />
     <Compile Include="MySearching.cs" />
     <Compile Include="PowerCalculationUsingRecursion.cs" />
     <Compile Include="Program.cs" />
