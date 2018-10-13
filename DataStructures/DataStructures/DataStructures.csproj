@@ -50,6 +50,7 @@
     <Compile Include="MyArrayExtesions.cs" />
     <Compile Include="MyBubbleSort.cs" />
     <Compile Include="MyDoublyLinkedList.cs" />
+    <Compile Include="MyHeap.cs" />
     <Compile Include="MyInsertionSort.cs" />
     <Compile Include="MyLinkedList.cs" />
     <Compile Include="MyMergeSort.cs" />
