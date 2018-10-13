@@ -50,6 +50,7 @@
     <Compile Include="MyArrayExtesions.cs" />
     <Compile Include="MyBubbleSort.cs" />
     <Compile Include="MyDoublyLinkedList.cs" />
+    <Compile Include="MyHeap.cs" />
     <Compile Include="MyInsertionSort.cs" />
     <Compile Include="MyLinkedList.cs" />
     <Compile Include="MyMergeSort.cs" />
@@ -63,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Learning_MoM.xls" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
