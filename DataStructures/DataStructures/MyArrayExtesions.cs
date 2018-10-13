@@ -19,5 +19,13 @@ namespace DataStructures
             }
             Console.WriteLine();
         }
+        public static void Print<T>(this T[] array, int maxLimit)
+        {
+            for (int i = 0; i < maxLimit; i++)
+            {
+                Console.Write(array[i] + " ");
+            }
+            Console.WriteLine();
+        }
     }
 }
