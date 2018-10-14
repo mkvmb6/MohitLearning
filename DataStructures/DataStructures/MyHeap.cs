@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace DataStructures
+﻿namespace DataStructures
 {
     public class MyHeap
     {
@@ -11,6 +9,9 @@ namespace DataStructures
 
             Add(heap, 3);
             Add(heap, 4);
+            Add(heap, -1);
+            Add(heap, -0);
+            Add(heap, -4);
             Add(heap, 5);
             Add(heap, 2);
 
@@ -24,14 +25,23 @@ namespace DataStructures
             heapSize++;
         }
 
-        private static void Heapify(int[] heap,int insertLocation)
+        private static void Heapify(int[] heap, int insertedLocation)
         {
-            var parentIndex = (insertLocation - 1) / 2;
+            var parentIndex = (insertedLocation - 1) / 2;
             var parent = heap[parentIndex];
 
-            if (insertLocation % 2 == 0)
+            var child = heap[insertedLocation];
+            if (child < parent)
             {
-                var rightIndex = insertLocation;// parentIndex * 2 + 2;
+                heap.Swap(parentIndex, insertedLocation);
+                Heapify(heap, parentIndex);
+            }
+
+            //Wrote below code when we were lil less intelligent. <-- Naina doesn't agree with this. But I DO.
+            /*
+            if (insertedLocation % 2 == 0)
+            {
+                var rightIndex = insertedLocation;// parentIndex * 2 + 2;
                 var rightChild = heap[rightIndex];
                 if (rightChild < parent)
                 {
@@ -41,14 +51,14 @@ namespace DataStructures
             }
             else
             {
-                var leftIndex = insertLocation;// parentIndex * 2 + 1;
+                var leftIndex = insertedLocation;// parentIndex * 2 + 1;
                 var leftChild = heap[leftIndex];
                 if (leftChild < parent)
                 {
                     heap.Swap(parentIndex, leftIndex);
                     Heapify(heap, parentIndex);
                 }
-            }
+            }*/
             //var leftChild = heap[parentIndex * 2 + 1];
             //var rightChild = heap[parentIndex * 2 + 2];
 
