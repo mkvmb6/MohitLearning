@@ -1,6 +1,6 @@
 ﻿namespace DataStructures
 {
-    public class MyHeapSort
+    public class MyMinHeapSort
     {
         static void Main(string[] args)
         {
@@ -18,16 +18,21 @@
             //heapify
             //swap
             //remove and add in the array
-            Heapify(array,0,array.Length);
+            //array = CreateMinHeap(array);
+
+            for (int i = array.Length / 2 - 1; i >= 0; i--)
+            {
+                Heapify(array, i, array.Length);
+            }
 
             var sortedArr = new int[array.Length];
-            var j=0;
+            var j = 0;
 
             for (int i = array.Length - 1; i >= 0; i--)
             {
                 array.Swap(0, i);
                 sortedArr[j++] = array[i];
-                Heapify(array, 0,i);
+                Heapify(array, 0, i);
             }
 
             return sortedArr;
@@ -66,5 +71,6 @@
             }
 
         }
+        
     }
 }

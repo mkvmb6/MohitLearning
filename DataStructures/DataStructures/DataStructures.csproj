@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>DataStructures.MyHeapSort</StartupObject>
+    <StartupObject>DataStructures.TowerOfHanoi</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -62,6 +62,7 @@
     <Compile Include="MySelectionSort.cs" />
     <Compile Include="RecursionFactorial.cs" />
     <Compile Include="RecursionFibonacci.cs" />
+    <Compile Include="TowerOfHanoi.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
