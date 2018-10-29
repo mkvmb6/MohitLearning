@@ -2,7 +2,7 @@
 
 namespace DataStructures
 {
-    public class MyLinkedList<T>
+    internal class MyLinkedList<T>
     {
         private Node start;
 
