@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>DataStructures.MyStackWithArray</StartupObject>
+    <StartupObject>DataStructures.MyStackWithLinkedList</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -58,6 +58,7 @@
     <Compile Include="MyQuickSort.cs" />
     <Compile Include="MySearching.cs" />
     <Compile Include="MyStackWithArray.cs" />
+    <Compile Include="MyStackWithLinkedList.cs" />
     <Compile Include="PowerCalculationUsingRecursion.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
