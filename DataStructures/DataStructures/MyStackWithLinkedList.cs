@@ -12,7 +12,7 @@ namespace DataStructures
             public Node Previous;
         }
 
-        static void Main(string[] args)
+        private static void Main()
         {
             var obj = new MyStackWithLinkedList();
             obj.Push(8);
