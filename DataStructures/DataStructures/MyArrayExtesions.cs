@@ -27,5 +27,14 @@ namespace DataStructures
             }
             Console.WriteLine();
         }
+
+        public static void Print<T>(this T[] array, int index1, int index2)
+        {
+            for (int i = index1; i <= index2; i++)
+            {
+                Console.WriteLine(array[i] +" ");
+            }
+            Console.WriteLine();
+        }
     }
 }

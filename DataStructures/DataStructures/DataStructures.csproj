@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>DataStructures.MyStackWithLinkedList</StartupObject>
+    <StartupObject>DataStructures.MyQueueWithArray</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -55,6 +55,7 @@
     <Compile Include="MyInsertionSort.cs" />
     <Compile Include="MyLinkedList.cs" />
     <Compile Include="MyMergeSort.cs" />
+    <Compile Include="MyQueueWithArray.cs" />
     <Compile Include="MyQuickSort.cs" />
     <Compile Include="MySearching.cs" />
     <Compile Include="MyStackWithArray.cs" />
