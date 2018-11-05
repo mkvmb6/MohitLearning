@@ -14,7 +14,6 @@ namespace DataStructures
             DeQueue();
             DeQueue();
             EnQueue(10);
-
             myQueue.Print(front, rear);
         }
 
