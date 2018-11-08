@@ -1,4 +1,6 @@
-﻿namespace DataStructures
+﻿using System;
+
+namespace DataStructures
 {
     internal class MyQueueWithLinkedList
     {
@@ -60,6 +62,26 @@
             }
             System.Console.WriteLine("\n-----------------------------");
         }
+
+        private void PrintQueue(Node node)
+        {
+
+            if (node == null)
+            {
+               // System.Console.WriteLine("Queue is empty.");
+                Console.WriteLine();
+                return;
+            }
+            Console.Write(node.data + " ,");
+            PrintQueue(node.next);
+
+        }
+
+        public void PrintQueueRecursively()
+        {
+            PrintQueue(front);
+        }
+
     }
 
     class QueueDriver
@@ -68,23 +90,23 @@
         {
             var myQueue = new MyQueueWithLinkedList();
             myQueue.EnQueue(3);
-            myQueue.PrintQueue();
+            myQueue.PrintQueueRecursively();
             myQueue.EnQueue(7);
-            myQueue.PrintQueue();
+            myQueue.PrintQueueRecursively();
             myQueue.DeQueue();
-            myQueue.PrintQueue();
+            myQueue.PrintQueueRecursively();
             myQueue.EnQueue(5);
-            myQueue.PrintQueue();
+            myQueue.PrintQueueRecursively();
             myQueue.EnQueue(2);
-            myQueue.PrintQueue();
+            myQueue.PrintQueueRecursively();
             myQueue.EnQueue(1);
-            myQueue.PrintQueue();
+            myQueue.PrintQueueRecursively();
             myQueue.DeQueue();
             myQueue.DeQueue();
             myQueue.DeQueue();
             myQueue.DeQueue();
 
-            myQueue.PrintQueue();/**/
+            myQueue.PrintQueueRecursively();/**/
 
         }
     }

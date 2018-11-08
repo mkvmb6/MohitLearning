@@ -101,6 +101,24 @@ namespace ProgrammingProblems
             return stobos;
         }
 
+        private int GetStobosWithInRange(string low, string high)
+        {
+            var digitsInStart = low.Length;
+            var digitsInEnd = high.Length;
+
+            var stobos = new List<string>();
+            for (var i = digitsInStart; i <= digitsInEnd; i++)
+            {
+               stobos.AddRange(FindStrobogrammatic(i));
+            }
+            var startNumber = Convert.ToInt32(low);
+            var endNumber = Convert.ToInt32(high);
+            var finalValue = stobos.Where(stobo => Convert.ToInt32(stobo) >= startNumber  &&
+                                             Convert.ToInt32(stobo) <= endNumber);
+
+            return finalValue.Count();
+        }
+
         private bool IsStobogrammatic(string number)
         {
             var badNumbers = new[] {'2', '3', '4', '5', '7'};
