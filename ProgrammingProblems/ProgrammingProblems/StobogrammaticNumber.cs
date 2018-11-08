@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -13,12 +12,12 @@ namespace ProgrammingProblems
         {
             var stopWatch = new Stopwatch();
             stopWatch.Start();
-            var stobos = new StobogrammaticNumber().FindStrobogrammatic(16);
+            var stobos = new StobogrammaticNumber().FindStrobogrammatic(4);
             stopWatch.Stop();
-            /*foreach (var stobo in stobos)
+            foreach (var stobo in stobos)
             {
                 Console.WriteLine(stobo+",");
-            }*/
+            }
             Console.WriteLine(stopWatch.ElapsedMilliseconds);
         }
 
@@ -75,15 +74,16 @@ namespace ProgrammingProblems
 
             var twoDigitStobos = GetTwoDigitStobos();
             var nDigitStobos = new List<string>();
-            foreach (var stobo in twoDigitStobos)
+            var nLessTwoStobos = MyFindStrobogrammatic(n - 2);
+            foreach (var twoDigitStobo in twoDigitStobos)
             {
-                foreach (var nLessTwo in MyFindStrobogrammatic(n - 2))
+                foreach (var nLessTwo in nLessTwoStobos)
                 {
-                    nDigitStobos.Add(stobo[0] + nLessTwo + stobo[1]);
+                    nDigitStobos.Add(twoDigitStobo[0] + nLessTwo + twoDigitStobo[1]);
                 }
 
             }
-            return nDigitStobos;//.Where(dd => !dd.StartsWith("0")).ToList();
+            return nDigitStobos;
         }
 
 
