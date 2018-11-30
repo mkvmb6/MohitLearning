@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>DataStructures.QueueDriver</StartupObject>
+    <StartupObject>DataStructures.BST</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BinarySearchTree.cs" />
     <Compile Include="LogUsingRecursion.cs" />
     <Compile Include="MyArrayExtesions.cs" />
     <Compile Include="MyBubbleSort.cs" />
