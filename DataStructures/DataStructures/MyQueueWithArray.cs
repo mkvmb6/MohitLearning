@@ -2,40 +2,46 @@
 
 namespace DataStructures
 {
-    internal class MyQueueWithArray
+    internal class MyQueueWithArray<T>
     {
         static int front = -1;
         static int rear = -1;
-        private static int[] myQueue = new int[100];
+        private static T[] myQueue = new T[100];
 
         static void Main(string[] args)
         {
-            EnQueue(8);
-            DeQueue();
-            DeQueue();
-            EnQueue(10);
+            var queue = new MyQueueWithArray<int>();
+            queue.EnQueue(8);
+            queue.DeQueue();
+            queue.DeQueue();
+            queue.EnQueue(10);
             myQueue.Print(front, rear);
         }
 
-        private static int DeQueue()
+        public T DeQueue()
         {
-            if (front > rear || front == -1)
+            if (IsEmpty())
             {
                 Console.WriteLine("Queue is empty");
-                return int.MinValue;
+                return default(T);
             }
             return myQueue[front++];
         }
 
-        private static void EnQueue(int number)
+        public void EnQueue(T data)
         {
             // rear = rear++; value of rear will not change here. it resulted in the out of bound exception
             rear++;
-            myQueue[rear] = number;
+            myQueue[rear] = data;
             if (rear == 0)
             {
                 front = 0;
             }
+        }
+
+        public bool IsEmpty()
+        {
+            return front > rear || front == -1;
         }
     }
 }

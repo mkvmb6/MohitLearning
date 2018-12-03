@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BinarySearchTree.cs" />
+    <Compile Include="Node.cs" />
     <Compile Include="LogUsingRecursion.cs" />
     <Compile Include="MyArrayExtesions.cs" />
     <Compile Include="MyBubbleSort.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="RecursionFactorial.cs" />
     <Compile Include="RecursionFibonacci.cs" />
     <Compile Include="TowerOfHanoi.cs" />
+    <Compile Include="BinaryTreeTraversal.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

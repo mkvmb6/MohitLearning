@@ -2,9 +2,9 @@
 
 namespace DataStructures
 {
-    public class BinarySearchTree
+    internal class BinarySearchTree
     {
-        private Node rootNode;
+        internal Node rootNode;
 
         public void Insert(int data)
         {
@@ -142,13 +142,63 @@ namespace DataStructures
             return tempNode;
         }
 
-        private class Node
+        #region Copied Delete Code
+
+
+        // This method mainly calls DeleteRec() 
+        public void DeleteData(int data)
         {
-            public int Data;
-            public Node Left;
-            public Node Parent;
-            public Node Right;
+            rootNode = DeleteRec(rootNode, data);
         }
+
+        /* A recursive function to insert a new Data in BST */
+        private Node DeleteRec(Node node, int deleteData)
+        {
+            /* Base Case: If the tree is empty */
+            if (node == null) return null;
+
+            /* Otherwise, recur down the tree */
+            if (deleteData < node.Data)
+                node.Left = DeleteRec(node.Left, deleteData);
+            else if (deleteData > node.Data)
+                node.Right = DeleteRec(node.Right, deleteData);
+
+            // if Data is same as node's Data, then This is the node 
+            // to be deleted 
+            else
+            {
+                // node with only one child or no child 
+                if (node.Left == null)
+                    return node.Right;
+                else if (node.Right == null)
+                    return node.Left;
+
+                // node with two children: Get the inorder successor (smallest 
+                // in the Right subtree) 
+                node.Data = MinValue(node.Right);
+
+                // Delete the inorder successor 
+                node.Right = DeleteRec(node.Right, node.Data);
+            }
+
+            return node;
+        }
+
+        private static int MinValue(Node root)
+        {
+            var minv = root.Data;
+            while (root.Left != null)
+            {
+                minv = root.Left.Data;
+                root = root.Left;
+            }
+            return minv;
+        }
+
+
+
+        #endregion
+
     }
 
     internal class BST
@@ -160,10 +210,25 @@ namespace DataStructures
             bst.Insert(10);
             bst.Insert(13);
             bst.Insert(2);
-            bst.Delete(5);
-            bst.Delete(10);
-            bst.Delete(2);
-            bst.Delete(13);
+            /* bst.Delete(5);
+             bst.Delete(10);
+             bst.Delete(2);
+             bst.Delete(13);
+
+            bst.DeleteData(5);
+            bst.DeleteData(10);
+            bst.DeleteData(13);
+            bst.DeleteData(2);*/
+
+
+            var treeTraversal = new BinaryTreeTraversal();
+            treeTraversal.InOrderTraversal(bst.rootNode);
+            Console.WriteLine();
+            treeTraversal.PreOrderTraversal(bst.rootNode);
+            Console.WriteLine();
+            treeTraversal.PostOrderTraversal(bst.rootNode);
+            Console.WriteLine();
+            treeTraversal.LevelOrderTraversal(bst.rootNode);
         }
     }
 }
