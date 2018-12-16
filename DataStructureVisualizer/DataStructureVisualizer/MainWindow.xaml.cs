@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -23,6 +24,19 @@ namespace DataStructureVisualizer
         public MainWindow()
         {
             InitializeComponent();
+            //ChangeLabelText();
         }
+
+        /*private async void ChangeLabelText()
+        {
+            var i = 0;
+            while (true)
+            {
+                await Task.Delay(1000);
+                //Thread.Sleep(1000);
+                MyNode.LabelText = i++.ToString();
+
+            }
+        }*/
     }
 }

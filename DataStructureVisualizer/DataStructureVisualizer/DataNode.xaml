@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="DataStructureVisualizer.DataNode"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:DataStructureVisualizer"
+             mc:Ignorable="d"
+             d:DesignHeight="100" d:DesignWidth="100">
+    <Border BorderThickness="2" BorderBrush="Black" CornerRadius="100">
+        <Grid>
+            <Ellipse Fill="#FFCDC2C2">
+                <Ellipse.Effect>
+                    <DropShadowEffect />
+                </Ellipse.Effect>
+            </Ellipse>
+            <Viewbox>
+                <TextBlock x:Name="LabelData" Text="{Binding MyLabelText}" Margin="2,0" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            </Viewbox>
+            
+
+        </Grid>
+    </Border>
+</UserControl>
